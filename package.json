@@ -1,7 +1,7 @@
 {
-  "name": "discord.js-bot-base",
+  "name": "discord.js-base-bot",
   "version": "0.0.1",
-  "description": "a simple bot base for discord.js",
+  "description": "a simple base bot for discord.js",
   "main": "app/index.js",
   "scripts": {
     "start": "node app/index.js",
@@ -10,9 +10,9 @@
     "dev": "nodemon app/index.js"
   },
   "author": "rablonkk' (https://github.com/rablonkk)",
-  "homepage": "https://github.com/rablonkk/discord.js-bot-base",
-  "repository": "github:rablonkk/discord.js-bot-baset",
-  "bugs": "https://github.com/rablonkk/discord.js-bot-base/issues",
+  "homepage": "https://github.com/rablonkk/discord.js-base-bot",
+  "repository": "github:rablonkk/discord.js-base-bot",
+  "bugs": "https://github.com/rablonkk/discord.js-base-bot/issues",
   "keywords": [
     "discord.js base bot",
     "discord.js bot",
