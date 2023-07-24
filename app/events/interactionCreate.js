@@ -48,7 +48,7 @@ module.exports = class interactionCreate extends Events {
 		const unknownEmbed = new EmbedBuilder({ color: this.client.config.colors.error })
 			.setDescription(`❌ Unknown command`);
 
-		interaction.reply({
+		await interaction.reply({
 			embeds: [unknownEmbed],
 			ephemeral: true
 		});
@@ -58,7 +58,7 @@ module.exports = class interactionCreate extends Events {
 		const disabledEmbed = new EmbedBuilder({ color: this.client.config.colors.error })
 			.setDescription(`❌ This command is currently disabled!`);
 
-		interaction.reply({
+		await interaction.reply({
 			embeds: [disabledEmbed],
 			ephemeral: true
 		});
@@ -68,7 +68,7 @@ module.exports = class interactionCreate extends Events {
 		const ignoreSlash = new EmbedBuilder({ color: this.client.config.colors.error })
 			.setDescription(`❌ This command is no longer available.`);
 
-		interaction.reply({
+		await interaction.reply({
 			embeds: [ignoreSlash],
 			ephemeral: true
 		});
@@ -78,7 +78,7 @@ module.exports = class interactionCreate extends Events {
 		const DmEmbed = new EmbedBuilder({ color: this.client.config.colors.error })
 			.setDescription(`❌ You can't use commands in my DMs`);
 
-		interaction.reply({
+		await interaction.reply({
 			embeds: [DmEmbed],
 			ephemeral: true
 		});
@@ -88,7 +88,7 @@ module.exports = class interactionCreate extends Events {
 		const errorEmbed = new EmbedBuilder({ color: this.client.config.colors.error })
 			.setDescription(`❌ An error occurred`);
 
-		interaction.reply({
+		await interaction.reply({
 			embeds: [errorEmbed],
 			ephemeral: true
 		});

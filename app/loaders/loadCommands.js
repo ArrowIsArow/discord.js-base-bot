@@ -42,10 +42,10 @@ module.exports = class loadCommands extends Loaders {
 		}
 	}
 
-	registerCommand(Command) {
+	async registerCommand(Command) {
 		const command = new Command(this.client);
 
-		this.client.commands.set(command.name, command);
+		await this.client.commands.set(command.name, command);
 	}
 
 };

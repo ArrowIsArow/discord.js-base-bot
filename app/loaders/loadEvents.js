@@ -40,9 +40,10 @@ module.exports = class loadEvents extends Loaders {
 		}
 	}
 
-	listenEvent(Event) {
+	async listenEvent(Event) {
 		const event = new Event(this.client);
-		this.client.on(event.name, (...args) => event.run(...args));
+		
+		await this.client.on(event.name, (...args) => event.run(...args));
 	}
 
 };

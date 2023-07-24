@@ -37,11 +37,12 @@ module.exports = class Ping extends Commands {
 		this.ignoreSlash = false;
 	}
 
-	runAsInteraction(interaction) {
-		const pingEmbed = new EmbedBuilder({ color: this.client.config.colors.embed })
-			.setDescription(`📡 API latency: \`${Math.round(interaction.client.ws.ping)}ms.\`\n🏓 Response time: \`${Date.now() - interaction.createdTimestamp}ms.\``);
+	async runAsInteraction(interaction) {
+		const pingEmbed = new EmbedBuilder()
+			.setDescription(`📡 API latency: \`${Math.round(interaction.client.ws.ping)}ms.\`\n🏓 Response time: \`${Date.now() - interaction.createdTimestamp}ms.\``)
+			.setColor(interaction.guild.members.me.displayHexColor) // with this simple code, the bot will use its own job color to add it to the embed.
 
-		interaction.reply({ embeds: [pingEmbed], ephemeral: true });
+		await interaction.reply({ embeds: [pingEmbed], ephemeral: true });
 	}
 
 };
