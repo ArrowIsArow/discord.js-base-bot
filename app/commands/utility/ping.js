@@ -19,7 +19,7 @@ module.exports = class Ping extends Commands {
 		this.options = [
 			/* {
 				name: 'test',
-				description: 'test'
+				description: 'test',
 				type: ApplicationCommandOptionType.Subcommand,
 				choices: [
 					{
