@@ -1,6 +1,6 @@
 {
   "name": "discord.js-base-bot",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "a simple base bot for discord.js",
   "main": "app/index.js",
   "scripts": {

@@ -1,4 +1,4 @@
-const { Client, GatewayIntentBits, Partials, ActivityType, Events } = require('discord.js');
+const { Client, GatewayIntentBits, Partials, WebhookClient, ActivityType, Events } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
 require('dotenv').config({ path: '.env' });
@@ -16,21 +16,21 @@ const client = new Client({
 	],
 });
 
-client.on(Events.ClientReady, (c) => {
-	c.user.setActivity({
-		type: ActivityType.Listening, // here you can change the status type, whether Playing, Listening, Streaming or Custom.
-		name: 'github.com/rablonkk', // here, you can change the statuses of your application.
-	});
+client.on(Events.ClientReady, () => {
+	console.log(`[DiscordJS] Logged as ${client.user.username}`);
 
-	console.log(`[DiscordJS API] Logged as ${c.user.username}`);
+	client.user.setActivity({
+		name: 'github.com/rablonkk',
+		type: ActivityType.Playing,
+	});
 });
 
 client.on(Events.Error, (err) => {
-	console.log('[Client ERROR] ', err);
+	console.log(`[Client ERROR] `, err);
 });
 
 process.on('unhandledRejection', (reason) => {
-	console.log('[ERROR] ', reason);
+	console.log(`[ERROR] `, reason);
 });
 
 function startStructures(directory) {
@@ -55,8 +55,7 @@ function startStructures(directory) {
 	}
 }
 
-startStructures('./loaders');
-
 (async () => {
+	startStructures('./loaders');
 	await client.login(process.env.TOKEN);
-});
+})();
