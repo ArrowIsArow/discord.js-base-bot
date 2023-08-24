@@ -1,4 +1,4 @@
-const { Client, GatewayIntentBits, Partials, WebhookClient, ActivityType, Events } = require('discord.js');
+const { Client, GatewayIntentBits, Partials, ActivityType, Events } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
 require('dotenv').config({ path: '.env' });
@@ -26,11 +26,11 @@ client.on(Events.ClientReady, () => {
 });
 
 client.on(Events.Error, (err) => {
-	console.log(`[Client ERROR] `, err);
+	console.log('[Client ERROR] ', err);
 });
 
 process.on('unhandledRejection', (reason) => {
-	console.log(`[ERROR] `, reason);
+	console.log('[ERROR] ', reason);
 });
 
 function startStructures(directory) {

@@ -44,7 +44,7 @@ module.exports = class Ping extends Commands {
 
 		await interaction.reply({
 			embeds: [pingEmbed],
-			ephemeral: true
+			ephemeral: true,
 		});
 	}
 

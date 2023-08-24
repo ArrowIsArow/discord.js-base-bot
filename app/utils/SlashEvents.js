@@ -52,7 +52,7 @@ module.exports = class SlashEvents {
 			originalCommand.options = [];
 		}
 
-		if (discordCommand.options.length != originalCommand.options.length) return false;
+		if (discordCommand.options.length !== originalCommand.options.length) return false;
 
 		const optionsIntegrity = this.compareOptions(discordCommand.options, originalCommand.options);
 		return optionsIntegrity;
