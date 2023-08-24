@@ -13,7 +13,7 @@ module.exports = class SlashEvents {
 			const command = {
 				name: localCommand.name,
 				description: localCommand.description,
-				options: localCommand.options
+				options: localCommand.options,
 			};
 
 			const discordCommand = applicationCommands.find(c => c.name === command.name);

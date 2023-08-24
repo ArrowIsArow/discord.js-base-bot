@@ -32,7 +32,8 @@ module.exports = class loadCommands extends Loaders {
 
 			if (fileStat.isDirectory()) {
 				this.loadFolder(path.join(directory, file));
-			} else if (file.endsWith('.js')) {
+			}
+			else if (file.endsWith('.js')) {
 				const Command = require(path.join(filePath, file));
 
 				if (Command.prototype instanceof Commands) {

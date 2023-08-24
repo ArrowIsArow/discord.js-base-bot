@@ -37,60 +37,61 @@ module.exports = class interactionCreate extends Events {
 
 			try {
 				command.runAsInteraction(interaction);
-			} catch (error) {
+			}
+			catch (error) {
 				this.commandError(interaction);
-				console.log(`[InteractionCreate ERROR] `, error);
+				console.log('[InteractionCreate ERROR] ', error);
 			}
 		}
 	}
 
 	async unknownCommand(interaction) {
 		const unknownEmbed = new EmbedBuilder({ color: this.client.config.colors.error })
-			.setDescription(`❌ Unknown command`);
+			.setDescription('❌ Unknown command');
 
 		await interaction.reply({
 			embeds: [unknownEmbed],
-			ephemeral: true
+			ephemeral: true,
 		});
 	}
 
 	async commandDisabled(interaction) {
 		const disabledEmbed = new EmbedBuilder({ color: this.client.config.colors.error })
-			.setDescription(`❌ This command is currently disabled!`);
+			.setDescription('❌ This command is currently disabled!');
 
 		await interaction.reply({
 			embeds: [disabledEmbed],
-			ephemeral: true
+			ephemeral: true,
 		});
 	}
 
 	async IgnoreSlash(interaction) {
 		const ignoreSlash = new EmbedBuilder({ color: this.client.config.colors.error })
-			.setDescription(`❌ This command is no longer available.`);
+			.setDescription('❌ This command is no longer available.');
 
 		await interaction.reply({
 			embeds: [ignoreSlash],
-			ephemeral: true
+			ephemeral: true,
 		});
 	}
 
 	async DmCommand(interaction) {
 		const DmEmbed = new EmbedBuilder({ color: this.client.config.colors.error })
-			.setDescription(`❌ You can't use commands in my DMs`);
+			.setDescription('❌ You can\'t use commands in my DMs');
 
 		await interaction.reply({
 			embeds: [DmEmbed],
-			ephemeral: true
+			ephemeral: true,
 		});
 	}
 
 	async commandError(interaction) {
 		const errorEmbed = new EmbedBuilder({ color: this.client.config.colors.error })
-			.setDescription(`❌ An error occurred`);
+			.setDescription('❌ An error occurred');
 
 		await interaction.reply({
 			embeds: [errorEmbed],
-			ephemeral: true
+			ephemeral: true,
 		});
 	}
 

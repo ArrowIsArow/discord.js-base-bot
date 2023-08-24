@@ -17,7 +17,7 @@ module.exports = class Ping extends Commands {
 
 		// the example below will show you how you can make the command options, or a subcommand.
 		this.options = [
-			/*{
+			/* {
 				name: 'test',
 				description: 'test'
 				type: ApplicationCommandOptionType.Subcommand,
@@ -40,9 +40,12 @@ module.exports = class Ping extends Commands {
 	async runAsInteraction(interaction) {
 		const pingEmbed = new EmbedBuilder()
 			.setDescription(`📡 API latency: \`${Math.round(interaction.client.ws.ping)}ms.\`\n🏓 Response time: \`${Date.now() - interaction.createdTimestamp}ms.\``)
-			.setColor(interaction.guild.members.me.displayHexColor) // with this simple code, the bot will use its own job color to add it to the embed.
+			.setColor(interaction.guild.members.me.displayHexColor); // with this simple code, the bot will use its own job color to add it to the embed.
 
-		await interaction.reply({ embeds: [pingEmbed], ephemeral: true });
+		await interaction.reply({
+			embeds: [pingEmbed],
+			ephemeral: true
+		});
 	}
 
 };

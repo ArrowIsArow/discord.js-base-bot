@@ -4,6 +4,6 @@ module.exports = {
 	colors: {
 		error: Colors.Red,
 		embed: Colors.Purple,
-		success: Colors.Green
-	}
+		success: Colors.Green,
+	},
 };

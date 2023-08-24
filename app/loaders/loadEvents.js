@@ -30,7 +30,8 @@ module.exports = class loadEvents extends Loaders {
 
 			if (fileStat.isDirectory()) {
 				this.loadFolder(path.join(directory, file));
-			} else if (file.endsWith('.js')) {
+			}
+			else if (file.endsWith('.js')) {
 				const Event = require(path.join(filePath, file));
 
 				if (Event.prototype instanceof Events) {
@@ -42,7 +43,7 @@ module.exports = class loadEvents extends Loaders {
 
 	async listenEvent(Event) {
 		const event = new Event(this.client);
-		
+
 		await this.client.on(event.name, (...args) => event.run(...args));
 	}
 
